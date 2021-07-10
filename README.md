@@ -8,6 +8,8 @@ A main screen of travel app UI contains nice swiper with vibrated favorite icon 
 `pip install kivy`
 `pip install kivymd`
 
+[watch on YouTube ](https://youtu.be/F4NN5hJN3MA)
+
 
 ![Screenshot](AppScreenshot.jpg)
 
