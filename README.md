@@ -13,4 +13,4 @@ A main screen of travel app UI contains nice swiper with vibrated favorite icon 
 
 
 
-![Alt Text](app-gif.gif)# KivyMD-Travel-App-UI
+![Alt Text](app-gif.gif)
