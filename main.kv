@@ -1,0 +1,218 @@
+
+#: import md_icons kivymd.icon_definitions.md_icons
+#
+MDScreen:
+
+    MDBoxLayout:
+        orientation:'vertical'
+
+        MDBoxLayout:
+            adaptive_height:True
+            padding:[25,0,0,10]
+            orientation:'vertical'
+            MDIconButton:
+                icon:"menu"
+                adaptive_height:True
+            MDLabel:
+                text:'Hey, sam !'
+                adaptive_height:True
+				font_style:'H5'
+                pos_hint:{'center_y':.5}
+            MDLabel:
+                text:"Let's, Explore The World"
+                font_style:'H5'
+                adaptive_height:True
+                pos_hint:{'center_y':.5}
+        MDBoxLayout:
+            size_hint_y:None
+            height:dp(80)
+            padding:dp(10)
+            ScrollView:
+                bar_width:0
+                MDBoxLayout:
+                    adaptive_width:True
+                    spacing:dp(10)
+                    padding:dp(10)
+                    TabLabel
+                        text:'Favorite'
+                        bg_color:app.theme_cls.primary_color
+                    TabLabel
+                        text:'New'
+                    TabLabel
+                        text:'Nearby'
+                    TabLabel
+                        text:'Recommended'
+                    TabLabel
+                        text:'Popular'
+                    TabLabel
+                        text:'Recently'
+        
+        MDSwiper:
+            size_hint_y: None
+            height: root.height*.4
+            on_swipe: self.get_current_item().ids.icon.shake()
+
+            MySwiper:
+                image:'images/1.jpg'
+            MySwiper:
+                image:'images/2.jpeg'
+            MySwiper:
+                image:'images/3.jpeg'
+            MySwiper:
+                image:'images/4.jpeg'
+        MDBoxLayout:
+            padding:dp(5)
+            size_hint_y:None
+            height:dp(75)
+            MDLabel:
+                text:"Top Destinations"
+                font_style:'H6'
+                pos_hint:{'center_y':.5}
+                adaptive_height:True
+        MDBoxLayout:
+            size_hint_y:None
+            height:dp(110)
+            padding:[dp(5),dp(5),dp(5),dp(10)]
+            ScrollView:
+                bar_width:0
+                MDBoxLayout:
+                    adaptive_width:True
+                    spacing:dp(20)
+                    padding:dp(5)
+                    BottomCard:
+                        image:'images/1.jpg'
+                    BottomCard:
+                        image:'images/2.jpeg'
+                    BottomCard:
+                        image:'images/3.jpeg'
+                    BottomCard:
+                        image:'images/4.jpeg'
+
+        MDBoxLayout:
+        MDBoxLayout:
+            size_hint_y:None
+            height:dp(60)
+            adaptive_width:True
+            padding:dp(12)
+            spacing:dp(10)
+            pos_hint:{'center_x':.5}
+            md_bg_color:.9,0.9,0.9,.5
+            radius:[50,50,0,0]
+            MDIconButton:
+                icon:'bell'
+                size_hint_x:None
+                width:root.width*.2
+            MDIconButton:
+                icon:'magnify'
+                size_hint_x:None
+                width:root.width*.2
+            MDFloatingActionButton:
+                icon: "home"
+                color: app.theme_cls.primary_color
+                size_hint_x:None
+                width:root.width*.2
+            MDIconButton:
+                icon:'account'
+                size_hint_x:None
+                width:root.width*.2
+            MDIconButton:
+                icon:'cards-heart'
+                size_hint_x:None
+                width:root.width*.2
+<BottomCard@MDCard>:
+    radius:[25]
+    image:""
+    size_hint_x:None
+    width:dp(260)
+    spacing:dp(10)
+    padding:dp(10)
+    elevation:15
+    FitImage:
+        source: root.image
+        radius: [20,]
+    MDBoxLayout:
+        orientation:'vertical'
+        MDLabel:
+            text:'Backwaters'
+            font_style:'H6'
+
+        MDLabel:
+            text:'Karala, India'
+
+
+        MDLabel:
+            text:  f"[font=Icons][color=#FFFF00] {md_icons['star']}[/color][/font] 4.9"
+            markup:True
+<TabLabel@Label>:
+    color:0,0,0,0
+    bg_color:0,0,0,0
+    canvas.before:
+        Color:
+            rgba:self.bg_color
+        RoundedRectangle:
+            radius:[25]
+            size:self.size[0]+10,self.size[1]
+            pos:self.pos[0]-5,self.pos[1]
+    
+    size_hint_y:None
+    size_hint_x:None
+    width:self.texture_size[0]
+    height:dp(50)
+    color:0,0,0,1
+
+<MagicButton@MagicBehavior+MDIconButton>
+
+
+<MySwiper@MDSwiperItem>
+    image:''
+    RelativeLayout:
+
+        FitImage:
+            source: root.image
+            radius: [20,]
+        MDBoxLayout:
+            orientation:'vertical'
+
+            pos_hint:{'x':(root.width-self.width+dp(10))/root.width,"y":.7}
+            adaptive_size:True
+            padding:4
+            MagicButton:
+                id: icon
+                icon: "cards-heart"
+                user_font_size: "36sp"
+                theme_text_color:'Custom'
+                text_color:1,0,0,1
+                adaptive_height:True
+            MDLabel:
+                text:  f"[font=Icons][color=#FFFF00] {md_icons['star']}[/color][/font][color=#FFFFFF] 4.5[/color]"
+                markup:True
+                halign:'center'
+
+
+        MDCard:
+            size_hint_y:None
+            size_hint_x:None
+            width:root.width-dp(20)
+            height:dp(85)
+            pos_hint:{'center_x':.5,"y":.05}
+            spacing: "12dp"
+            md_bg_color:.9,.9,.9,.2
+            orientation:"vertical"
+            padding:dp(10)
+            radius:[20]
+
+            MDLabel:
+                text: "Nusa Penida island"
+                font_style: "H6"
+                size_hint_y: None
+                height: self.texture_size[1]
+                pos_hint: {"center_y": .5}
+                opposite_colors: True
+            MDLabel:
+                text:  f"[font=Icons][color=#0000FF] {md_icons['map-marker']}[/color][/font]  Bali, Indonesia"
+                font_style: "Subtitle1"
+                markup:True
+                size_hint_y: None
+                height: self.texture_size[1]
+                pos_hint: {"center_y": .5}
+                opposite_colors: True
