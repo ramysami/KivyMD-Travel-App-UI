@@ -1,6 +1,6 @@
 # KivyMD-Travel-Shop-UI
 
-A main screen of travel app UI contains nice swiper with vibrated favorite icon ❤ when the user swipe the cards and custom tabs and smooth custom bottom navigation bar 
+A main screen of travel app UI contains a nice swiper with vibrated a favorite icon ❤ when the user swipe the cards and custom tabs and smooth custom bottom navigation bar 
 
 
 ## requirements
